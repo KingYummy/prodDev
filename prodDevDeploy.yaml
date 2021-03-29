@@ -1,35 +1,37 @@
+--- 
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: nginx-deployment
-  labels:
+metadata: 
+  labels: 
     app: nginx
-spec:
+  name: nginx-deployment
+spec: 
   replicas: 1
-  selector:
-    matchLabels:
+  selector: 
+    matchLabels: 
       app: nginx
-  template:
-    metadata:
-      labels:
+  template: 
+    metadata: 
+      labels: 
         app: nginx
-    spec:
-      containers:
-      - name: website
-        image: oriyombad/website
-        ports: 8080
+    spec: 
+      containers: 
+        - 
+          image: oriyombad/website
+          name: website
+          ports: 8080
 
 
----
-
+--- 
 apiVersion: v1
 kind: Service
-metadata:
+metadata: 
   name: my-service
-spec:
-  selector:
-    app: nginx
-  ports:
-    - protocol: TCP
+spec: 
+  ports: 
+    - 
       port: 80
+      protocol: TCP
       targetPort: 8080
+  selector: 
+    app: nginx
