@@ -19,8 +19,9 @@ spec:
         - 
           image: oriyombad/website
           name: website
-          ports: 8080
-
+          ports: 
+            - 
+              containerPort: 8080
 
 --- 
 apiVersion: v1
