@@ -1,39 +1,36 @@
---- 
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  labels: 
-    app: nginx
-  name: nginx-deployment
-spec: 
-  replicas: 2
-  selector: 
-    matchLabels: 
-      app: nginx
-  template: 
-    metadata: 
-      labels: 
-        app: nginx
-    spec: 
-      containers: 
-        - 
-          image: oriyombad/website
-          name: website
-          ports: 
-            - 
-              containerPort: 8080
+metadata:
+  name: yomi-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: yomi-app
+  template:
+    metadata:
+      labels:
+        app: yomi-app
+    spec:
+      containers:
+        - name: website
+          image: oriyombad/website:website
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
 
---- 
+
+---
 apiVersion: v1
 kind: Service
-metadata: 
-  name: my-service
+metadata:
+  name: yomi-app
 spec:
-  type: LoadBalancer 
-  ports: 
-    - 
-      port: 80
-      protocol: TCP
+  type: NodePort
+  ports:
+    - port: 80
       targetPort: 8080
-  selector: 
-    app: nginx
+  selector:
+    app: yomi-app
