@@ -1,3 +1,4 @@
-FROM nginx:latest
+FROM ubuntu:latest
 RUN apt-get update
-ADD . /usr/share/nginx/html
+RUN apt-get install apache2
+ADD . /var/www/html
