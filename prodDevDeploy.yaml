@@ -28,7 +28,7 @@ kind: Service
 metadata:
   name: yomi-app
 spec:
-  type: NodePort
+        type: loadBalancer
   ports:
     - port: 80
       targetPort: 8080
