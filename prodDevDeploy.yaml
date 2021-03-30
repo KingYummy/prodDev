@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: website
-          image: oriyombad/website:website
+          image: oriyombad/website
           ports:
             - containerPort: 8080
           env:
