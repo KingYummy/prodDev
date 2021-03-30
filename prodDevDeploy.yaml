@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: website
-          image: oriyombad/website
+          image: oriyombad/website:website
           ports:
             - containerPort: 8080
           env:
@@ -28,7 +28,7 @@ kind: Service
 metadata:
   name: yomi-app
 spec:
-        type: loadBalancer
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 8080
