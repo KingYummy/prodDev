@@ -29,7 +29,7 @@ kind: Service
 metadata: 
   name: my-service
 spec:
-  type: NodePort 
+  type: LoadBalancer 
   ports: 
     - 
       port: 80
