@@ -1,4 +1,4 @@
-# Set up complete CI_CD Jenkins pipeline for kubernetes
+# Complete CI/CD Jenkins Pipeline For Kubernetes
 
 
 <img src="readmeImages/finished.png">
