@@ -1,5 +1,11 @@
 # Complete CI/CD Jenkins Pipeline For Kubernetes
 
+A completely automated CI/CD pipeline project that
+1. Continuously pulls the latest source code from the repository (Github) whenever a change is made by the developers
+2. Build the latest code and create a docker image using the Dockerfile
+3. Push the new Docker image to a remote repository (Docker Hub)
+4. Deploys app (dockerized) to a Kubernetes Cluster.
+
 
 <img src="readmeImages/finished.png">
  
