@@ -1,4 +1,4 @@
-# Complete CI/CD Jenkins Pipeline For Kubernetes
+# Automated CI/CD Pipeline Using Jenkins, Docker Hub, and Kubernetes
 
 A completely automated CI/CD pipeline project that
 1. Continuously pulls the latest source code from the repository (Github) whenever a change is made by the developers
