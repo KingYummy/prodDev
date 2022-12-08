@@ -20,15 +20,15 @@ node{
     stage("SSH Into k8s Server") {
         def remote = [:]
         remote.name = 'K8S master'
-        remote.host = '54.234.85.125'
-        remote.user = 'root'
-        remote.password = 'admin'
+        remote.host = '0.0.0.0'
+        remote.user = 'username'
+        remote.password = 'password'
         remote.allowAnyHosts = true
         
         stage("SSH into K8s Master") {
-			  withCredentials([sshUserPrivateKey(credentialsId: 'ssh2', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
-				  remote.user = root
-				  remote.identityFile = identity
+			  withCredentials([sshUserPrivateKey(credentialsId: 'ssh', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
+				  remote.user = user
+				  remote.identityFile = identityF
 				  
 				  stage('Put K8s Manifest File Into K8s Master') {
 				      sshPut remote: remote, from: './prodDevDeploy.yaml', into: '.'
