@@ -99,7 +99,7 @@ kubectl get services
     
     stage("Push Image to Docker Hub"){
         withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-            sh "docker login -u oriyombad -p ${DOCKER_HUB_CREDENTIALS}"
+            sh "docker login -u username -p ${DOCKER_HUB_CREDENTIALS}"
         }
         sh "docker push ImageName "
     }
